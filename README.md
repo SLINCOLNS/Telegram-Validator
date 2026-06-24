@@ -1,2 +1,126 @@
-# Telegram-Validator
-Username validator telegram
+# 🔍 Telegram Username Checker
+
+<p align="center">
+  <img src="https://img.shields.io/badge/version-1.0.0-blue?style=flat-square" />
+  <img src="https://img.shields.io/badge/python-3.10%2B-blue?style=flat-square&logo=python" />
+  <img src="https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey?style=flat-square" />
+  <img src="https://img.shields.io/badge/license-MIT-green?style=flat-square" />
+</p>
+
+Настольное GUI-приложение для массовой проверки занятости юзернеймов в Telegram. Поддерживает прокси, многопоточность, авто-обновления и удобный интерфейс с живым логом.
+
+---
+
+## ✨ Возможности
+
+- **Массовая проверка** — загружайте списки юзернеймов из `.txt` файла или вводите вручную
+- **Асинхронные запросы** — настраиваемый параллелизм (до N одновременных проверок)
+- **SOCKS5 прокси** — ротация прокси в режиме round-robin или random
+- **Умные повторы** — экспоненциальный бэкофф при временных ошибках
+- **Живой лог** — цветной вывод результатов в реальном времени
+- **Статистика** — счётчики VALID / INVALID / ERROR с прогресс-баром
+- **Сохранение результатов** — автоматически в `results/valid.txt`, `invalid.txt`, `errors.txt`
+- **Авто-обновление** — проверка новых версий через GitHub Releases при каждом запуске
+
+---
+
+## 🖥️ Скриншот
+
+> *(добавьте скриншот приложения сюда)*
+
+---
+
+## 🚀 Быстрый старт
+
+### Запуск из исходников
+
+```bash
+# 1. Клонируйте репозиторий
+git clone https://github.com/your_username/tg-username-checker.git
+cd tg-username-checker
+
+# 2. Установите зависимости
+pip install aiohttp aiohttp-socks
+
+# 3. Запустите
+python tg_checker_gui.py
+```
+
+### Готовый .exe (Windows)
+
+Скачайте `tg_checker.exe` из раздела [Releases](../../releases/latest) и запустите — установка не требуется.
+
+---
+
+## ⚙️ Настройки
+
+| Параметр | По умолчанию | Описание |
+|---|---|---|
+| Параллельных запросов | 5 | Количество одновременных проверок |
+| Задержка между запросами | 0.1 – 0.5 сек | Случайная пауза для снижения нагрузки |
+| Макс. повторов при ошибке | 3 | Количество ретраев на один юзернейм |
+| Режим прокси | Round-robin | `round-robin` или `random` |
+
+---
+
+## 🔌 Прокси
+
+Формат файла с прокси (по одному на строку):
+
+```
+socks5://user:password@host:port
+socks5://host:port
+```
+
+Загрузите файл через кнопку **«Загрузить прокси»** в интерфейсе.
+
+---
+
+## 📁 Структура результатов
+
+После проверки файлы сохраняются в папку `results/`:
+
+```
+results/
+├── valid.txt      # свободные юзернеймы
+├── invalid.txt    # занятые юзернеймы
+└── errors.txt     # ошибки при проверке
+```
+
+---
+
+## 🔨 Сборка .exe
+
+Требуется [PyInstaller](https://pyinstaller.org/):
+
+```bash
+pip install pyinstaller
+pyinstaller tg_checker.spec
+```
+
+Готовый файл появится в `dist/tg_checker.exe`.
+
+---
+
+## 🔄 Авто-обновление
+
+При каждом запуске программа проверяет наличие новой версии через GitHub API. Если обновление доступно — появляется уведомление с возможностью скачать и установить одним кликом.
+
+Также доступна ручная проверка через кнопку **«🔄 Проверить обновления»** в нижней панели.
+
+---
+
+## 📦 Зависимости
+
+```
+aiohttp
+aiohttp-socks
+```
+
+Стандартная библиотека Python (`tkinter`, `asyncio`, `urllib`) — дополнительной установки не требует.
+
+---
+
+## 📄 Лицензия
+
+MIT © [@bervervly](https://t.me/bervervly)
