@@ -1,7 +1,6 @@
 # 🔍 Telegram Username Checker
 
 <p align="center">
-  <img src="https://img.shields.io/badge/version-1.0.0-blue?style=flat-square" />
   <img src="https://img.shields.io/badge/python-3.10%2B-blue?style=flat-square&logo=python" />
   <img src="https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey?style=flat-square" />
   <img src="https://img.shields.io/badge/license-MIT-green?style=flat-square" />
@@ -24,31 +23,9 @@
 
 ---
 
-## 🖥️ Скриншот
-
-> *(добавьте скриншот приложения сюда)*
-
----
-
-## 🚀 Быстрый старт
-
-### Запуск из исходников
-
-```bash
-# 1. Клонируйте репозиторий
-git clone https://github.com/your_username/tg-username-checker.git
-cd tg-username-checker
-
-# 2. Установите зависимости
-pip install aiohttp aiohttp-socks
-
-# 3. Запустите
-python tg_checker_gui.py
-```
-
 ### Готовый .exe (Windows)
 
-Скачайте `tg_checker.exe` из раздела [Releases](../../releases/latest) и запустите — установка не требуется.
+Скачайте `TelegramValidator.exe` из раздела [Releases](../../releases/latest) и запустите — установка не требуется.
 
 ---
 
@@ -89,18 +66,7 @@ results/
 
 ---
 
-## 🔨 Сборка .exe
-
-Требуется [PyInstaller](https://pyinstaller.org/):
-
-```bash
-pip install pyinstaller
-pyinstaller tg_checker.spec
-```
-
-Готовый файл появится в `dist/tg_checker.exe`.
-
----
+ 
 
 ## 🔄 Авто-обновление
 
@@ -110,17 +76,5 @@ pyinstaller tg_checker.spec
 
 ---
 
-## 📦 Зависимости
-
-```
-aiohttp
-aiohttp-socks
-```
-
-Стандартная библиотека Python (`tkinter`, `asyncio`, `urllib`) — дополнительной установки не требует.
-
----
-
-## 📄 Лицензия
 
 MIT © [@bervervly](https://t.me/bervervly)
